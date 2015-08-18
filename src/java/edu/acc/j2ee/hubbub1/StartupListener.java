@@ -11,8 +11,8 @@ public class StartupListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         HubbubDAO db = new HubbubDAO();
-        User jd = new User("johndoe", new Date(113, 4, 9));
-        User jj = new User("jilljack", new Date(113, 9, 31));
+        User jd = new User("johndoe", "password", new Date(113, 4, 9));
+        User jj = new User("jilljack", "password", new Date(113, 9, 31));
         db.addUser(jd);
         db.addUser(jj);
 

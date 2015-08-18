@@ -18,6 +18,15 @@
         <img src="images/hubbub.png"/><br/>
         <h1>Welcome to Hubbub&trade;!</h1>
         <h2>Timeline</h2>
+        <c:if test="${user != null}">
+            <h3><font color = "gray"> User ${user}.username Logged In</font></h3>
+            <a href ="newpost.jsp">Write new post</a><br>
+            <a href ="logout.jsp">Logout</a>
+        </c:if>
+        <c:if test="${user == null}">
+            <a href="login.jsp">Login</a>
+        </c:if>
+        <h3><font color ="teal">${flash}</font></h3>
         <c:forEach var="post" items="${posts}">
             <div class="postdiv">
                 <span class="authorspan">${post.author}</span>

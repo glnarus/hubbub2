@@ -30,4 +30,16 @@ public class HubbubDAO {
         Collections.sort(posts, new PostComparator());
         return posts;
     }
+    
+    public List<Post> getSortedAndEscapedPosts() {
+        List<Post> posts = new ArrayList<>();
+        for (User user: users){
+            for (Post post : user.getPosts()){
+                post.setContent(PostValidator.unEscapeSafe(post.getContent()));
+                posts.add(post);
+            }
+        }
+        Collections.sort(posts, new PostComparator());
+        return posts;
+    }
 }
