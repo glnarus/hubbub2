@@ -44,7 +44,7 @@ public class Controller extends HttpServlet {
                 return "login";
             } else {
                 request.getSession().setAttribute("user", user);
-                return timeline(request);       
+                return timeline(request);
             }
         } else {
             request.setAttribute("flash", "Invalid user name or password");

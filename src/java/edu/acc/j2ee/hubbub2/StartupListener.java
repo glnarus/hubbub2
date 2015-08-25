@@ -9,10 +9,7 @@ public class StartupListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         HubbubDAO db = new HubbubDAO();
-        //No longer need to programmatically add this info in the listener as
-        //its in the dbase using Netbeans already; all that needs to happen
-        //is to share a pointer to the db to everyone
-       /* User jd = new User("johndoe", "password", new Date(113, 4, 9));
+        User jd = new User("johndoe", "password", new Date(113, 4, 9));
         User jj = new User("jilljack", "password", new Date(113, 9, 31));
         db.addUser(jd);
         db.addUser(jj);
@@ -33,7 +30,7 @@ public class StartupListener implements ServletContextListener {
                 "I see good reason not to configure Twonky.",
                 new Date(113, 10, 1),
                 jj);
-        db.addPost(three); */
+        db.addPost(three);
         sce.getServletContext().setAttribute("db", db);
     }
 
